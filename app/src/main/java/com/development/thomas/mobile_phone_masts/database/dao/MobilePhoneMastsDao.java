@@ -22,10 +22,10 @@ public interface MobilePhoneMastsDao {
     @Query("SELECT * FROM mobilephonemast")
     List<MobilePhoneMast> getMobilePhoneMasts();
 
-    @Query("SELECT * FROM mobilephonemast WHERE id != :maximumNumberOfResults")
-    LiveData<List<MobilePhoneMast>> getMobilePhoneMastsAscending(int maximumNumberOfResults);
+    @Query("SELECT * FROM mobilephonemast ORDER BY current_rent LIMIT :maximumNumberOfResults")
+    List<MobilePhoneMast> getMobilePhoneMastsAscending(int maximumNumberOfResults);
 
-    @Query("SELECT * FROM mobilephonemast WHERE id != :maximumNumberOfResults")
-    LiveData<List<MobilePhoneMast>> getMobilePhoneMastsDescending(int maximumNumberOfResults);
+    @Query("SELECT * FROM mobilephonemast ORDER BY current_rent DESC LIMIT :maximumNumberOfResults")
+    List<MobilePhoneMast> getMobilePhoneMastsDescending(int maximumNumberOfResults);
 
 }

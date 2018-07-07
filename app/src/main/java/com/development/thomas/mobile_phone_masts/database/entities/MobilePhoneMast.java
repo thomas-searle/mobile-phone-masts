@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 public class MobilePhoneMast {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public long id;
 
     @ColumnInfo(name = "property_name")

@@ -71,14 +71,14 @@ public class MobilePhoneMastDaoTests {
     public void getMobilePhoneMastAscTest() {
         createTestDataWithRent();
 
-        LiveData<List<MobilePhoneMast>> mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMastsAscending(numberOfMastsToGet);
+        List<MobilePhoneMast> mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMastsAscending(numberOfMastsToGet);
 
-        Assert.assertNotNull(mobilePhoneMasts.getValue());
-        Assert.assertEquals(numberOfMastsToGet, mobilePhoneMasts.getValue().size());
+        Assert.assertNotNull(mobilePhoneMasts);
+        Assert.assertEquals(numberOfMastsToGet, mobilePhoneMasts.size());
 
         // Test that results are returned in asc current rent
         float previousRentAmount = 0f;
-        for (MobilePhoneMast mobilePhoneMast: mobilePhoneMasts.getValue()) {
+        for (MobilePhoneMast mobilePhoneMast: mobilePhoneMasts) {
             Assert.assertTrue(previousRentAmount <= mobilePhoneMast.currentRent);
             previousRentAmount = mobilePhoneMast.currentRent;
         }
@@ -88,14 +88,14 @@ public class MobilePhoneMastDaoTests {
     public void getMobilePhoneMastDescTest() {
         createTestDataWithRent();
 
-        LiveData<List<MobilePhoneMast>> mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMastsDescending(numberOfMastsToGet);
+        List<MobilePhoneMast> mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMastsDescending(numberOfMastsToGet);
 
-        Assert.assertNotNull(mobilePhoneMasts.getValue());
-        Assert.assertEquals(numberOfMastsToGet, mobilePhoneMasts.getValue().size());
+        Assert.assertNotNull(mobilePhoneMasts);
+        Assert.assertEquals(numberOfMastsToGet, mobilePhoneMasts.size());
 
         // Test that results are returned in desc current rent
         float previousRentAmount = Float.MAX_VALUE;
-        for (MobilePhoneMast mobilePhoneMast: mobilePhoneMasts.getValue()) {
+        for (MobilePhoneMast mobilePhoneMast: mobilePhoneMasts) {
             Assert.assertTrue(previousRentAmount >= mobilePhoneMast.currentRent);
             previousRentAmount = mobilePhoneMast.currentRent;
         }
