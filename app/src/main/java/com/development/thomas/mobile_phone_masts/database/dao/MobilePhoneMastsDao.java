@@ -19,6 +19,9 @@ public interface MobilePhoneMastsDao {
     @Query("DELETE FROM mobilephonemast")
     void clear();
 
+    @Query("SELECT COUNT(*) FROM mobilephonemast")
+    int rowsOfData();
+
     @Query("SELECT * FROM mobilephonemast")
     List<MobilePhoneMast> getMobilePhoneMasts();
 

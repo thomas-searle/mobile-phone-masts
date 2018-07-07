@@ -55,7 +55,7 @@ public class MobilePhoneMastDaoTests {
     }
 
     @Test
-    public void clearMobilePhoneMast() {
+    public void clearMobilePhoneMastTest() {
         mobilePhoneMastsDao.insert(MobilePhoneMastTestUtil.createWithDefaults());
 
         List<MobilePhoneMast> mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMasts();
@@ -65,6 +65,21 @@ public class MobilePhoneMastDaoTests {
 
         mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMasts();
         Assert.assertEquals(0, mobilePhoneMasts.size());
+    }
+
+    @Test
+    public void countMobilePhoneMastTest() {
+        int rowCount = mobilePhoneMastsDao.rowsOfData();
+
+        Assert.assertEquals(0, rowCount);
+
+        mobilePhoneMastsDao.insert(MobilePhoneMastTestUtil.createWithDefaults());
+        mobilePhoneMastsDao.insert(MobilePhoneMastTestUtil.createWithDefaults());
+        mobilePhoneMastsDao.insert(MobilePhoneMastTestUtil.createWithDefaults());
+
+        rowCount = mobilePhoneMastsDao.rowsOfData();
+        Assert.assertEquals(3, rowCount);
+
     }
 
     @Test
