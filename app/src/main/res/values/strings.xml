@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">mobile-phone-masts</string>
+    <string name="app_name">Mobile Phone Masts</string>
+
+    <string name="btn_toggle_order">Toggle Order</string>
 </resources>

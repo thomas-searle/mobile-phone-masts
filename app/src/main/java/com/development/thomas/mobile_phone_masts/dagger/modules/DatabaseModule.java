@@ -17,8 +17,10 @@ public class DatabaseModule {
     @Provides
     @Singleton
     public AppDatabase provideAppDatabase(MobilePhoneMastsApplication application) {
+        //TODO: Should not allow main thread queries
         return Room.
                 databaseBuilder(application.getApplicationContext(), AppDatabase.class, "MobilePhoneMast-Database")
+                .allowMainThreadQueries()
                 .build();
     }
 

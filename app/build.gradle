@@ -47,6 +47,9 @@ dependencies {
     // Stetho
     implementation 'com.facebook.stetho:stetho:1.5.0'
 
+    // TableView
+    implementation 'de.codecrafters.tableview:tableview:2.8.0'
+
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
 }

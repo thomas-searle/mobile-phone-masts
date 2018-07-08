@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="mast_table_header_row">
+        <item>Property Name</item>
+        <item>Property Address 1</item>
+        <item>Property Address 2</item>
+        <item>Property Address 3</item>
+        <item>Property Address 4</item>
+        <item>Unit Name</item>
+        <item>Tenant Name</item>
+        <item>Lease Start Date</item>
+        <item>Lease End Date</item>
+        <item>Lease Years</item>
+        <item>Current Rent</item>
+    </array>
+</resources>
