@@ -1,11 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-</RelativeLayout>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.development.thomas.mobile_phone_masts.viewmodels.AddMastViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_add_mast">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/txt_property_address_one"
+                    style="@style/AddMastEditText"
+                    android:hint="@string/edt_hint_property_address_one"
+                    android:text="@{viewModel.propertyAddressOne}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_property_address_two"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_property_address_one"
+                    android:hint="@string/edt_hint_property_address_two"
+                    android:text="@{viewModel.propertyAddressTwo}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_property_address_three"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_property_address_two"
+                    android:hint="@string/edt_hint_property_address_three"
+                    android:text="@{viewModel.propertyAddressThree}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_property_address_four"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_property_address_three"
+                    android:hint="@string/edt_hint_property_address_four"
+                    android:text="@{viewModel.propertyAddressFour}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_unit_name"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_property_address_four"
+                    android:hint="@string/edt_hint_unit_name"
+                    android:text="@{viewModel.unitName}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_tenant_name"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_unit_name"
+                    android:hint="@string/edt_hint_tenant_name"
+                    android:text="@{viewModel.tenantName}"
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/txt_lease_start_date"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_tenant_name"
+                    android:hint="@string/edt_hint_lease_start_date"
+                    android:text="@{viewModel.leaseStartDate}"
+                    android:inputType="none"
+                    android:editable="false"/>
+
+                <EditText
+                    android:id="@+id/txt_lease_end_date"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_lease_start_date"
+                    android:hint="@string/edt_hint_lease_end_date"
+                    android:text="@{viewModel.leaseEndDate}"
+                    android:inputType="none"
+                    android:editable="false"/>
+
+                <EditText
+                    android:id="@+id/txt_lease_years"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_lease_end_date"
+                    android:hint="@string/edt_hint_lease_lease_years"
+                    android:text="@{viewModel.leaseYears}"
+                    android:inputType="number"/>
+
+                <EditText
+                    android:id="@+id/txt_current_rent"
+                    style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_lease_years"
+                    android:hint="@string/edt_hint_lease_current_rent"
+                    android:text="@{viewModel.currentRent}"
+                    android:inputType="numberDecimal"/>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_add_mast"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_add_mast" />
+
+    </RelativeLayout>
+</layout>

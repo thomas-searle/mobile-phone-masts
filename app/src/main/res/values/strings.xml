@@ -2,4 +2,19 @@
     <string name="app_name">Mobile Phone Masts</string>
 
     <string name="btn_toggle_order">Toggle Order</string>
+    <string name="btn_add_mast">Add Mobile Phone Mast</string>
+
+    <string name="edt_hint_property_address_one">Property Address One</string>
+    <string name="edt_hint_property_address_two">Property Address Two</string>
+    <string name="edt_hint_property_address_three">Property Address Three</string>
+    <string name="edt_hint_property_address_four">Property Address Four</string>
+    <string name="edt_hint_unit_name">Unit Name</string>
+    <string name="edt_hint_tenant_name">Tenant Name</string>
+    <string name="edt_hint_lease_start_date">Start Date</string>
+    <string name="edt_hint_lease_end_date">End Date</string>
+    <string name="edt_hint_lease_lease_years">Lease Years</string>
+    <string name="edt_hint_lease_current_rent">Current Rent</string>
+
+    <string name="error_add_mast">Please enter a valid value</string>
+
 </resources>
