@@ -14,11 +14,25 @@
 
     </HorizontalScrollView>
 
+    <!-- Toggle Order Button -->
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/btn_toggle_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
         android:text="@string/btn_toggle_order"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_mast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@android:color/white"
+        android:layout_margin="8dp" />
 
 </RelativeLayout>
