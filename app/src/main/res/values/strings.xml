@@ -4,6 +4,7 @@
     <string name="btn_toggle_order">Toggle Order</string>
     <string name="btn_add_mast">Add Mobile Phone Mast</string>
 
+    <string name="edt_hint_property_name">Property Name</string>
     <string name="edt_hint_property_address_one">Property Address One</string>
     <string name="edt_hint_property_address_two">Property Address Two</string>
     <string name="edt_hint_property_address_three">Property Address Three</string>

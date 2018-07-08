@@ -22,10 +22,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/txt_property_name"
+                    style="@style/AddMastEditText"
+                    android:hint="@string/edt_hint_property_name"
+                    android:text="@{viewModel.propertyName}"
+                    android:inputType="text"/>
 
                 <EditText
                     android:id="@+id/txt_property_address_one"
                     style="@style/AddMastEditText"
+                    android:layout_below="@+id/txt_property_name"
                     android:hint="@string/edt_hint_property_address_one"
                     android:text="@{viewModel.propertyAddressOne}"
                     android:inputType="text"/>

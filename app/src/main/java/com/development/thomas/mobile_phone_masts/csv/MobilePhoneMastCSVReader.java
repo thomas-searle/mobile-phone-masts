@@ -28,7 +28,7 @@ public class MobilePhoneMastCSVReader {
     public List<MobilePhoneMast> readMobilePhoneMasts(InputStream inputStream) throws IOException, ParseException {
         List<MobilePhoneMast> mobilePhoneMasts = new ArrayList<>();
 
-        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd MM yyyy");
 
         List<String[]> rows = csvReader.readCSV(inputStream, skipFirstRow, columnSplitBy);
 

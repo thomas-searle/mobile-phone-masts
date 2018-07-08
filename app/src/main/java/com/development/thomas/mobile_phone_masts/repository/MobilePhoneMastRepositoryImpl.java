@@ -8,7 +8,9 @@ import com.development.thomas.mobile_phone_masts.database.dao.MobilePhoneMastsDa
 import com.development.thomas.mobile_phone_masts.database.entities.MobilePhoneMast;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,9 +58,43 @@ public class MobilePhoneMastRepositoryImpl implements MobilePhoneMastRepository 
                 mobilePhoneMasts = mobilePhoneMastsDao.getMobilePhoneMastsDescending(numberOfMastsToRetrieve);
             }
         } catch (IOException | ParseException ex) {
-            // TODO: Handle error
+
         }
 
         return mobilePhoneMasts;
+    }
+
+    @Override
+    public void insertMobilePhoneMast(String propertyName,
+                                      String propertyAddressOne,
+                                      String propertyAddressTwo,
+                                      String propertyAddressThree,
+                                      String propertyAddressFour,
+                                      String unitName,
+                                      String tenantName,
+                                      String leaseStartDate,
+                                      String leaseEndDate,
+                                      int leaseYears,
+                                      float currentRent) {
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            MobilePhoneMast mobilePhoneMast = new MobilePhoneMast();
+            mobilePhoneMast.propertyName = propertyName;
+            mobilePhoneMast.propertyAddressOne = propertyAddressOne;
+            mobilePhoneMast.propertyAddressTwo = propertyAddressTwo;
+            mobilePhoneMast.propertyAddressThree = propertyAddressThree;
+            mobilePhoneMast.propertyAddressFour = propertyAddressFour;
+            mobilePhoneMast.unitName = unitName;
+            mobilePhoneMast.tenantName = tenantName;
+            mobilePhoneMast.leaseStartDate = dateFormat.parse(leaseStartDate);
+            mobilePhoneMast.leaseEndDate = dateFormat.parse(leaseEndDate);
+            mobilePhoneMast.leaseYears = leaseYears;
+            mobilePhoneMast.currentRent = currentRent;
+
+            mobilePhoneMastsDao.insert(mobilePhoneMast);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

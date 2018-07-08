@@ -1,5 +1,6 @@
 package com.development.thomas.mobile_phone_masts.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.development.thomas.mobile_phone_masts.R;
@@ -14,5 +15,11 @@ public class AddMastActivity extends BaseActivity {
 
         AddMobileMastFragment addMobileMastFragment = new AddMobileMastFragment();
         displayFragment(addMobileMastFragment);
+    }
+
+    public void onAddMobileMastFinished() {
+        Intent addMastFinishedIntent = new Intent(this, MainActivity.class);
+        startActivity(addMastFinishedIntent);
+        finish();
     }
 }

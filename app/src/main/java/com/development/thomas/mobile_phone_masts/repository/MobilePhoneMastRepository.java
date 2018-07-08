@@ -13,4 +13,29 @@ public interface MobilePhoneMastRepository {
      */
     List<MobilePhoneMast> getTopMobilePhoneMasts(boolean ascending);
 
+    /**
+     * Saves a Mobile Phone Mast
+     * @param propertyAddressOne
+     * @param propertyAddressTwo
+     * @param propertyAddressThree
+     * @param propertyAddressFour
+     * @param unitName
+     * @param tenantName
+     * @param leaseStartDate
+     * @param leaseEndDate
+     * @param leaseYears
+     * @param currentRent
+     */
+    void insertMobilePhoneMast(String propertyName,
+                               String propertyAddressOne,
+                               String propertyAddressTwo,
+                               String propertyAddressThree,
+                               String propertyAddressFour,
+                               String unitName,
+                               String tenantName,
+                               String leaseStartDate,
+                               String leaseEndDate,
+                               int leaseYears,
+                               float currentRent);
+
 }

@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class AddMastViewModel extends ViewModel {
 
+    public ObservableField<String> propertyName;
     public ObservableField<String> propertyAddressOne;
     public ObservableField<String> propertyAddressTwo;
     public ObservableField<String> propertyAddressThree;
@@ -19,6 +20,7 @@ public class AddMastViewModel extends ViewModel {
     public ObservableField<String> currentRent;
 
     public AddMastViewModel() {
+        propertyName = new ObservableField<>();
         propertyAddressOne = new ObservableField<>();
         propertyAddressTwo = new ObservableField<>();
         propertyAddressThree = new ObservableField<>();

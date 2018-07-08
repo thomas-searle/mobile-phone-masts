@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import android.widget.EditText;
 
 import com.development.thomas.mobile_phone_masts.MobilePhoneMastsApplication;
 import com.development.thomas.mobile_phone_masts.R;
+import com.development.thomas.mobile_phone_masts.activities.AddMastActivity;
 import com.development.thomas.mobile_phone_masts.databinding.AddMastFragmentBinding;
 import com.development.thomas.mobile_phone_masts.dialogs.DatePickerDialogFragment;
 import com.development.thomas.mobile_phone_masts.repository.MobilePhoneMastRepositoryImpl;
@@ -72,8 +72,23 @@ public class AddMobileMastFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (validateForm()) {
-                    // TODO: Save to DB
-                    Log.d("TEST", "ViewModel: " + binding.txtPropertyAddressOne.getText());
+                    // Save to DB
+                    mobilePhoneMastRepository.insertMobilePhoneMast(
+                            binding.txtPropertyName.getText().toString(),
+                            binding.txtPropertyAddressOne.getText().toString(),
+                            binding.txtPropertyAddressTwo.getText().toString(),
+                            binding.txtPropertyAddressThree.getText().toString(),
+                            binding.txtPropertyAddressFour.getText().toString(),
+                            binding.txtUnitName.getText().toString(),
+                            binding.txtTenantName.getText().toString(),
+                            binding.txtLeaseStartDate.getText().toString(),
+                            binding.txtLeaseEndDate.getText().toString(),
+                            Integer.parseInt(binding.txtLeaseYears.getText().toString()),
+                            Float.parseFloat(binding.txtCurrentRent.getText().toString())
+                    );
+
+                    ((AddMastActivity)getActivity()).onAddMobileMastFinished();
+
                 }
             }
         });
@@ -118,6 +133,10 @@ public class AddMobileMastFragment extends Fragment {
     }
 
     private boolean validateForm() {
+        if (!validateEditText(binding.txtPropertyName)) {
+            return false;
+        }
+
         if (!validateEditText(binding.txtPropertyAddressOne)) {
             return false;
         }
