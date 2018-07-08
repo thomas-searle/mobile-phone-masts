@@ -3,6 +3,7 @@ package com.development.thomas.mobile_phone_masts.fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 
 import com.development.thomas.mobile_phone_masts.MobilePhoneMastsApplication;
 import com.development.thomas.mobile_phone_masts.R;
+import com.development.thomas.mobile_phone_masts.activities.MainActivity;
 import com.development.thomas.mobile_phone_masts.repository.MobilePhoneMastRepositoryImpl;
 import com.development.thomas.mobile_phone_masts.tableview.MobileMastTableView;
 import com.development.thomas.mobile_phone_masts.tableview.TableViewAdapter;
@@ -52,6 +54,15 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 tableView.setDataAdapter(new TableViewAdapter(getContext(), mobilePhoneMastRepository.getTopMobilePhoneMasts(shouldAscend)));
                 shouldAscend = !shouldAscend;
+            }
+        });
+
+        FloatingActionButton addFloatingActionButton = getView().findViewById(R.id.fab_add_mast);
+        addFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.onAddMobileMastInitiated();
             }
         });
     }
